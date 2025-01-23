@@ -1,0 +1,108 @@
+.app-container {
+    display: flex;
+    width: 100%;
+    padding: 180px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #004d7f;
+    margin-bottom: 20px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: center
+}
+
+.app-main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.app-header {
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    align-items: center
+   
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.medal-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.medal-table th,
+.medal-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.medal-table th {
+    background-color: #f1f1f1;
+}
+
+.app-main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.medal-form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.medal-form div {
+    margin-bottom: 10px;
+}
+
+.medal-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
