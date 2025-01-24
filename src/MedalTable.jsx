@@ -1,30 +1,35 @@
-import React from 'react';
+import React from "react";
 
-function MedalTable({ medals }) {
+function MedalTable({ medals, onDelete }) {
   return (
-    <div className="medal-table">
-      <h2>메달 테이블</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>나라 이름</th>
-            <th>금메달</th>
-            <th>은메달</th>
-            <th>동메달</th>
+    <table className="medal-table">
+      <thead>
+        <tr>
+          <th>국가명</th>
+          <th>금메달</th>
+          <th>은메달</th>
+          <th>동메달</th>
+          <th>총 메달</th>
+          <th>액션</th>
+        </tr>
+      </thead>
+      <tbody>
+        {medals.map((medal, index) => (
+          <tr key={index}>
+            <td>{medal.country}</td>
+            <td>{medal.gold}</td>
+            <td>{medal.silver}</td>
+            <td>{medal.bronze}</td>
+            <td>{medal.gold + medal.silver + medal.bronze}</td>
+            <td>
+              <button className="delete-button" onClick={() => onDelete(medal.country)}>
+                삭제
+              </button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {medals.map((medal, index) => (
-            <tr key={index}>
-              <td>{medal.country}</td>
-              <td>{medal.gold}</td>
-              <td>{medal.silver}</td>
-              <td>{medal.bronze}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
