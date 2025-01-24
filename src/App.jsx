@@ -11,19 +11,21 @@ function App() {
     silver: 0,
     bronze: 0,
   });
-  const [sortBy, setSortBy] = useState("gold"); // 정렬 기준: 금메달 기준
+  const [sortBy, setSortBy] = useState("gold");
 
   // 페이지가 로드될 때 로컬 스토리지에서 데이터 불러오기
   useEffect(() => {
-    const savedData = JSON.parse(localStorage.getItem("medalTable"));
+    const savedData = localStorage.getItem("medalTable");
     if (savedData) {
-      setMedalTable(savedData);
+      setMedalTable(JSON.parse(savedData));
     }
   }, []);
 
   // medalTable 변경 시 로컬 스토리지에 저장
   useEffect(() => {
-    localStorage.setItem("medalTable", JSON.stringify(medalTable));
+    if (medalTable.length > 0) {
+      localStorage.setItem("medalTable", JSON.stringify(medalTable));
+    }
   }, [medalTable]);
 
   // 입력 값 핸들링
@@ -39,7 +41,6 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 중복 국가 처리
     const existingIndex = medalTable.findIndex(
       (medal) => medal.country === formData.country
     );
@@ -80,12 +81,10 @@ function App() {
       return;
     }
 
-    // 수정된 국가로 테이블 업데이트
     const updatedTable = [...medalTable];
     updatedTable[existingIndex] = { ...formData };
     setMedalTable(updatedTable);
 
-    // 폼 초기화
     setFormData({ country: "", gold: 0, silver: 0, bronze: 0 });
   };
 
